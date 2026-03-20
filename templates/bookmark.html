@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block navbar %}{% endblock %}
+{% block content %}
+
+<div class="container mt-5" style="max-width: 900px;">
+    <h1 class="mb-4"><strong>📌 Saved Reflections</strong></h1>
+
+    {% if reflections %}
+        {% for reflection in reflections %}
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+
+                    <h5 class="card-title">
+                        <b>{{ reflection.study_topic }}</b>
+                    </h5>
+
+                    <p class="text-muted mb-2" style="font-size: 14px;">
+                        {{ reflection.timestamp.strftime('%d %b %Y • %I:%M %p') }}
+                    </p>
+
+                    <div style="white-space: pre-line; font-size: 15px;">
+                        {{ reflection.cheat_sheet | safe }}
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="text-center mt-5">
+            <h5 class="text-muted">No saved reflections yet.</h5>
+            <p>Go reflect and bookmark one to see it here.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

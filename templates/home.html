@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="Title">Welcome to your mind</h1>
+<p class="Text">
+    REFLECT.AI helps you become a master of your own learning.
+</p>
+
+<button class="get-started" onclick="window.location.href='{{ url_for('reflect') }}'">
+    Start Reflecting
+</button>
+
+<div class="box box-1">
+    <h3><b>Insights</b></h3>
+    <p>AI feedback & learning analysis</p>
+</div>
+
+<div class="box box-2">
+    <h3><b>Learning Tips</b></h3>
+    <p>Learn better, not harder</p>
+</div>
+
+<div class="box box-3">
+    <h3><b>Reflection Contest</b></h3>
+    <p>Know what you know</p>
+</div>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block navbar %}{% endblock %}
+{% block content %}
+
+<div class="container mt-5" style="max-width: 800px;">
+    <h1 class="mb-3"><strong>Start Reflecting</strong></h1>
+    <p class="text-muted mb-4">
+        Reflect on how you studied. Be honest — this helps the AI understand your learning process.
+    </p>
+
+    <form method="POST" action="{{ url_for('reflect') }}">
+
+        <div class="mb-3">
+            <label class="form-label"><b>Study Topic</b></label>
+            <input type="text"
+                   class="form-control"
+                   name="study_topic"
+                   placeholder=""
+                   value="{{ request.form.study_topic }}">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label"><b>Your Reflection</b></label>
+            <textarea class="form-control"
+                      name="reflection_text"
+                      rows="6"
+                      placeholder="What felt clear? What confused you? How did you study?">{{ request.form.reflection_text }}</textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label"><b>Study Duration (optional)</b></label>
+            <input type="text"
+                   class="form-control"
+                   name="study_duration"
+                   placeholder=""
+                   value="{{ request.form.study_duration }}">
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label"><b>Confidence Level (1–5)</b></label>
+            <select class="form-select" name="confidence_level">
+                <option value="" disabled {% if not request.form.confidence_level %}selected{% endif %}>
+                    Select confidence
+                </option>
+                {% for i in range(1,6) %}
+                <option value="{{ i }}"
+                    {% if request.form.confidence_level == i|string %}selected{% endif %}>
+                    {{ i }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-outline-info px-4 py-2">
+            <b>Analyze</b>
+        </button>
+    </form>
+
+    {% if ai_response %}
+    <div class="card mt-5 shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title mb-3">AI Study Analysis</h4>
+            <div style="white-space: pre-line;font-size: 15px;">
+                <div class="analysis-box">
+                {{ ai_response | safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if ai_response and latest_reflection_id %}
+    <form method="POST"
+          action="{{ url_for('save_reflection', id=latest_reflection_id) }}">
+        <button class="btn btn-outline-primary mt-3">
+            🔖 Save Reflection
+        </button>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

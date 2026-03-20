@@ -1,0 +1,204 @@
+/* Desktop - 1 */
+body {
+  margin: 0;
+  width: 1440px;
+  height: 1024px;
+  background: #E8F4FF;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+}
+
+/* Header */
+.header {
+  position: absolute;
+  width: 1512px;
+  height: 95px;
+  top: 0;
+  left: 0;
+  background: #F6FFFF;
+}
+
+.logo {
+  position: absolute;
+  left: 26px;
+  top: 28px;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login-btn {
+  position: absolute;
+  right: 52px;
+  top: 18px;
+  width: 115px;
+  height: 49px;
+  background: #4F46E5;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.register-btn {
+  position: absolute;
+  right: 200px;
+  top: 18px;
+  width: 115px;
+  height: 49px;
+  background: #4F46E5;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Main Section */
+.Title {
+  position: absolute;
+  top: 204px;
+  left: 453px;
+  font-size: 48px;
+  font-weight: 600;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Text {
+  position: absolute;
+  top: 298px;
+  left: 380px;
+  font-size: 24px;
+}
+
+.get-started {
+  position: absolute;
+  top: 392px;
+  left: 580px;
+  width: 280px;
+  height: 62px;
+  background: #4F46E5;
+  border-radius: 30px;
+  color: white;
+  font-size: 32px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.bookmark-btn {
+  position: absolute;
+  right: 350px;
+  top: 18px;
+  width: 115px;
+  height: 49px;
+  background: #4F46E5;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Box */
+.box {
+  position: absolute;
+  width: 360px;
+  height: 147px;
+  background: #F6FFFF;
+  border-radius: 22px;
+  padding: 20px;
+}
+
+.box-1 { left: 74px; top: 636px; }
+.box-2 { left: 531px; top: 636px; }
+.box-3 { left: 987px; top: 636px; }
+
+.box h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.box p {
+  font-size: 15px;
+  margin-top: 10px;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
