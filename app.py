@@ -120,7 +120,7 @@ def reflect():
 
             try:
                 response = client.models.generate_content(
-                    model="gemini-3-flash-preview",
+                    model="gemini-3.5-flash",
                     contents=prompt
                 )
 
@@ -171,4 +171,4 @@ with app.app_context():
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-    app.run(host="0.0.0.0", port=10000)
+    app.run(host="0.0.0.0", port = 5000, debug=True)
